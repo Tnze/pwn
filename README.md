@@ -14,4 +14,4 @@ func main() {
     p.Interactive()
 }
 ```
-> The `if err != nil {` isn't needed. If an error is present, log.Fatal will be called.
+> There is no `if err != nil`. If an error is present, log.Fatal will be called.
