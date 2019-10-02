@@ -1,12 +1,12 @@
 # pwn
-
+[![GoDoc](https://godoc.org/github.com/Tnze/pwn?status.svg)](https://godoc.org/github.com/Tnze/pwn)  
 Play CTF with golang!
 
 ## Getting started
 ```go
 package main
 
-import "github.com/Tnze/pwn"
+import "github.com/Tnze/pwn/v2"
 
 func main() {
     p := pwn.Remote("example.com:1314")
