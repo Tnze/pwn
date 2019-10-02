@@ -37,7 +37,7 @@ func (l *localReadWriter) Close() error {
 }
 
 // Local run an local command.
-func Local(cmd *exec.Cmd) io.ReadWriteCloser {
+func Local(cmd *exec.Cmd) Program {
 	stdout, err := cmd.StdoutPipe()
 	if err != nil {
 		log.Fatalf("Open stdout error: %v", err)
@@ -58,5 +58,5 @@ func Local(cmd *exec.Cmd) io.ReadWriteCloser {
 		log.Fatalf("Start cmd error: %v", err)
 	}
 
-	return newLocalReadWriter(stdout, stderr, stdin)
+	return Program{newLocalReadWriter(stdout, stderr, stdin)}
 }
